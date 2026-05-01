@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/leads';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/leads';
 
 export const fetchLeads = async (searchQuery = '') => {
   const url = searchQuery ? `${API_URL}?search=${encodeURIComponent(searchQuery)}` : API_URL;
